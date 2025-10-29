@@ -1,0 +1,367 @@
+/* Blood Request & Stock Management - Modern Healthcare Theme */
+
+/* Request Buttons */
+.request-blood-btn {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: auto;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.request-blood-btn:hover {
+  background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+.post-request-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.post-request-btn:hover {
+  background: linear-gradient(135deg, #219653 0%, #1e8449 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* Blood Requests List */
+.blood-requests-list {
+  margin-top: 2rem;
+}
+
+.blood-request-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #dc3545;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.blood-request-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #dc3545 0%, #0d6efd 100%);
+}
+
+.blood-request-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Request Header */
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.request-header h4 {
+  margin: 0;
+  color: #dc3545;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Urgency Badges */
+.urgency-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.urgency-badge.normal {
+  background: #d1edff;
+  color: #0c5460;
+  border: 2px solid #bee5eb;
+}
+
+.urgency-badge.urgent {
+  background: #fff3cd;
+  color: #856404;
+  border: 2px solid #ffeaa7;
+}
+
+.urgency-badge.critical {
+  background: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+/* Request Details */
+.request-details p {
+  margin: 0.5rem 0;
+  color: #495057;
+  line-height: 1.6;
+}
+
+/* Request Actions */
+.request-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.edit-btn,
+.close-btn {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+  color: white;
+  box-shadow: 0 3px 10px rgba(13, 110, 253, 0.3);
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #0b5ed7 0%, #0a58ca 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+.close-btn {
+  background: #95a5a6;
+  color: white;
+  box-shadow: 0 3px 10px rgba(149, 165, 166, 0.3);
+}
+
+.close-btn:hover {
+  background: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+/* Request Form Section */
+.request-form-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid #dc3545;
+}
+
+.blood-request-form {
+  max-width: 600px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancel-btn {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+/* Contact Info */
+.contact-info {
+  font-size: 0.95rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.contact-info div {
+  margin-bottom: 0.4rem;
+  color: #495057;
+}
+
+.contact-info div:last-child {
+  margin-bottom: 0;
+}
+
+/* Status Text */
+.approved-text {
+  color: #27ae60;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  background: #d4edda;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.rejected-text {
+  color: #dc3545;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  background: #f8d7da;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.empty-state p {
+  margin: 0.5rem 0;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+/* Stock Cards */
+.stock-card.low-stock {
+  border-left-color: #f39c12;
+  background: #fffaf0;
+}
+
+.stock-card.critical {
+  border-left-color: #dc3545;
+  background: #fff5f5;
+}
+
+.stock-status {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stock-card:not(.low-stock) .stock-status {
+  background: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.stock-card.low-stock .stock-status {
+  background: #fff3cd;
+  color: #856404;
+  border: 2px solid #ffeaa7;
+}
+
+.stock-card.critical .stock-status {
+  background: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+/* Request Tabs */
+.requests-tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #dee2e6;
+  background: white;
+  border-radius: 10px 10px 0 0;
+  padding: 0 1rem;
+}
+
+.requests-tabs button {
+  padding: 1rem 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  color: #6c757d;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.requests-tabs button:hover {
+  color: #0d6efd;
+}
+
+.requests-tabs .tab-active {
+  border-bottom-color: #0d6efd;
+  color: #0d6efd;
+  font-weight: 700;
+}
+
+/* Enhanced Status Badges */
+.status-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 2px solid #ffeaa7;
+}
+
+.status-badge.approved {
+  background: #d4edda;
+  color: #155724;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 2px solid #c3e6cb;
+}
+
+.status-badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 2px solid #f5c6cb;
+}
+
+/* Stock Card Transitions */
+.stock-card {
+  transition: all 0.3s ease;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stock-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
