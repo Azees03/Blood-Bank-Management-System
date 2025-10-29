@@ -18,7 +18,7 @@ const donationApplicationSchema = new mongoose.Schema({
   },
   bloodType: { type: String, required: true },
   units: { type: Number, required: true },
-  status: { type: String, default: "pending" }, // pending, approved, rejected
+  status: { type: String, default: "pending" },
   appliedDate: { type: Date, default: Date.now },
   donationDate: { type: Date },
   healthConditions: { type: String },

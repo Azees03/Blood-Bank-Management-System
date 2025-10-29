@@ -6,8 +6,8 @@ const bloodStockSchema = new mongoose.Schema({
     ref: "BloodBank",
     required: true,
   },
-  bloodType: { type: String, required: true }, // ✅ renamed from bloodGroup
-  units: { type: Number, required: true },     // ✅ renamed from unitsAvailable
+  bloodType: { type: String, required: true },
+  units: { type: Number, required: true },
   lastUpdated: { type: Date, default: Date.now },
 });
 

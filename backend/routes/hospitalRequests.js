@@ -7,7 +7,14 @@ router.post("/", async (req, res) => {
   try {
     const newRequest = new HospitalRequest(req.body);
     await newRequest.save();
-    res.status(201).json({ message: "Blood request submitted successfully", request: newRequest });
+    
+    await newRequest.populate("bloodBankId", "bankName address phone");
+    await newRequest.populate("hospitalId", "hospitalName address phone");
+    
+    res.status(201).json({ 
+      message: "Blood request submitted successfully", 
+      request: newRequest 
+    });
   } catch (error) {
     console.error("❌ Hospital request error:", error);
     res.status(500).json({ message: "Server error" });
@@ -18,7 +25,8 @@ router.post("/", async (req, res) => {
 router.get("/hospital/:hospitalId", async (req, res) => {
   try {
     const requests = await HospitalRequest.find({ hospitalId: req.params.hospitalId })
-      .populate("bloodBankId", "bankName address phone");
+      .populate("bloodBankId", "bankName address phone")
+      .sort({ requestDate: -1 });
     res.json(requests);
   } catch (error) {
     console.error("❌ Get hospital requests error:", error);
@@ -29,8 +37,9 @@ router.get("/hospital/:hospitalId", async (req, res) => {
 // Get requests for blood bank
 router.get("/bank/:bankId", async (req, res) => {
   try {
-    const requests = await HospitalRequest.find({ bloodBankId: req.params.bankId, status: "pending" })
-      .populate("hospitalId", "hospitalName address phone");
+    const requests = await HospitalRequest.find({ bloodBankId: req.params.bankId })
+      .populate("hospitalId", "hospitalName address phone")
+      .sort({ requestDate: -1 });
     res.json(requests);
   } catch (error) {
     console.error("❌ Get bank requests error:", error);
@@ -46,7 +55,10 @@ router.patch("/:requestId/status", async (req, res) => {
       req.params.requestId,
       { status, rejectionReason, deliveryDate },
       { new: true }
-    );
+    )
+    .populate("bloodBankId", "bankName address phone")
+    .populate("hospitalId", "hospitalName address phone");
+    
     res.json({ message: "Request status updated", request });
   } catch (error) {
     console.error("❌ Update request status error:", error);

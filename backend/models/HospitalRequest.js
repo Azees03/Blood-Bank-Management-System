@@ -14,7 +14,7 @@ const hospitalRequestSchema = new mongoose.Schema({
   bloodType: { type: String, required: true },
   units: { type: Number, required: true },
   urgency: { type: String, default: "normal" },
-  status: { type: String, default: "pending" }, // pending, approved, rejected
+  status: { type: String, default: "pending" },
   patientDetails: { type: String, required: true },
   requiredBy: { type: Date },
   notes: { type: String },

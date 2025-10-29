@@ -15,14 +15,20 @@ mongoose.connect("mongodb://localhost:27017/blood_management")
 // Import routes
 const bloodBankRoutes = require("./routes/bloodbank");
 const stockRoutes = require("./routes/stock");
-const hospitalRoutes = require("./routes/hospital"); // ✅ Add hospital routes
-const donorRoutes = require("./routes/donor"); // ✅ Add donor routes
+const hospitalRoutes = require("./routes/hospital");
+const donorRoutes = require("./routes/donor");
+const bloodRequestRoutes = require("./routes/bloodRequests");
+const hospitalRequestRoutes = require("./routes/hospitalRequests");
+const donationApplicationRoutes = require("./routes/donationApplications");
 
 // Use routes
-app.use("/api/bloodbank", bloodBankRoutes);
-app.use("/api/stock", stockRoutes);
-app.use("/api/hospital", hospitalRoutes); // ✅ Use hospital routes
-app.use("/api/donor", donorRoutes); // ✅ Use donor routes
+app.use("/api/bloodbank", bloodBankRoutes);  // Blood bank auth + directory
+app.use("/api/stock", stockRoutes);          // Blood stock management
+app.use("/api/hospital", hospitalRoutes);    // Hospital auth
+app.use("/api/donor", donorRoutes);          // Donor auth
+app.use("/api/blood-requests", bloodRequestRoutes);       // Blood bank posts
+app.use("/api/hospital-requests", hospitalRequestRoutes); // Hospital requests
+app.use("/api/donation-applications", donationApplicationRoutes); // Donor apps
 
 // Default route
 app.get("/", (req, res) => {
