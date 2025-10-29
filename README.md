@@ -4,6 +4,7 @@ A comprehensive web application for managing blood bank operations, connecting d
 
 ## 📋 Table of Contents
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
@@ -43,7 +44,7 @@ A comprehensive web application for managing blood bank operations, connecting d
 - **Blood Compatibility Chart**: Educational resource
 - **Emergency Information**: Quick access for urgent needs
 
-  ## 📸 Screenshots
+## 📸 Screenshots
 
 ### Dashboard Overview
 ![Dashboard](screenshots/dashboard-overview.png)
